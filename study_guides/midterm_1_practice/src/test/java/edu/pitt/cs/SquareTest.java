@@ -19,8 +19,14 @@ public class SquareTest {
 	 */
 	@Test
 	public void testSetSquaredIntegration() {
+		Square square = new Square();
+		Number number = new Number();
+		
 		// TODO: Fill in!
-		fail();
+		square.setSquared(number, 3);
+		assertEquals(9, number.getVal());
+
+		// fail();
 	}
 
 	/**
@@ -36,6 +42,17 @@ public class SquareTest {
 	@Test
 	public void testSetSquaredUnit() {
 		// TODO: Fill in!
-		fail();
+		// trying to isolate square, so thats a real object
+		Square square = new Square();
+		// number is not what we're trying to test so we mock it
+		Number number = Mockito.mock(Number.class);
+		//call setSquared on square
+		square.setSquared(number, 3);
+		// tautological test, passes, but incorrect
+		// Mockito.when(number.getVal()).thenReturn(9);
+		// use mockito.verify to check if number is 9
+		Mockito.verify(number).setVal(9);
+
+		// fail();
 	}
 }
