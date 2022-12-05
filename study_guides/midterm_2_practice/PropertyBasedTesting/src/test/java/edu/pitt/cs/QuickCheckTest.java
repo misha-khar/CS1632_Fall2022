@@ -15,12 +15,18 @@ public class QuickCheckTest {
 	public void testSquare(@InRange(minInt = -10, maxInt = 10) int x) {
 		int ret = IntegerOps.square(x);
 		// TODO: Fill in
+		assertTrue(ret >= 0 && ret <= 100);
+
 	}
 	
 	@Property
 	public void testAdd(@InRange(minInt = -10, maxInt = 10) int x, @InRange(minInt = -10, maxInt = 10) int y) {
 		int ret = IntegerOps.add(x, y);
 		// TODO: Fill in
+		assertTrue(ret >= -20 && ret <= 20);
+		assertTrue(x == ret - y);
+		assertTrue(y == ret - x);
+
 	}
 	
 }

@@ -13,5 +13,10 @@ public class SqrtTest {
 	public void testSqrt(@InRange(minDouble = 0, maxDouble = 25) double d) {
 		double ret = Math.sqrt(d);
 		// TODO: Fill in
+		// System.out.println(d);
+		assertTrue(ret >= 0);
+		assertTrue(d >= 1 ? ret <= d : ret >= d);
+
+
 	}
 }

@@ -26,12 +26,16 @@ public class JPFTest {
 	public void testSquare() {
 		 int ret = IntegerOps.square(x);
 		 // TODO: Fill in.
+		 assertTrue(ret >= 0 && ret <= 100);
 	}
 
 	@Test
 	public void testAdd() {
 		int ret = IntegerOps.add(x, y);
 		// TODO: Fill in.
+		assertTrue(ret >= -20 && ret <= 20);
+		assertTrue(x == ret - y);
+		assertTrue(y == ret - x);
 	}
 	
 }
